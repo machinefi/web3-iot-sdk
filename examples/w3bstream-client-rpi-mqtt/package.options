@@ -1,0 +1,12 @@
+SensorData.random max_size:17
+SensorData.gyroscope  max_count:3
+SensorData.gyroscope fixed_count:true
+SensorData.accelerometer  max_count:3
+SensorData.accelerometer fixed_count:true
+BinaryPackage.signature max_size:64
+BinaryPackage.signature fixed_length:true
+BinaryPackage.data max_size:2048
+Header.event_type  max_size:100
+Header.pub_id  max_size:100
+Header.token  max_size:300
+Event.payload max_size:1024

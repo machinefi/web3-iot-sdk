@@ -1,0 +1,19 @@
+[package]
+name = "raspi_test"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+ws-sdk =  { version = "0.1.15" , features = ["crypto"]}
+anyhow = "1.0.69"
+serde_json = "1.0.93"
+serde = { version = "1.0.152", features = ["derive"] }
+#getrandom = { version = "0.2", features = ["js"] }
+protobuf = "3"
+
+[build-dependencies]
+protobuf-codegen = "3"

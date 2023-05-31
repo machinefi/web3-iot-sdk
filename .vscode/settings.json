@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.csv": "csv",
+        "stdio.h": "c"
+    },
+
+    // Place build output from the CMake output in a separate folder per build type and crypto implementation
+    "cmake.buildDirectory": "${workspaceRoot}/build/${buildType}/${variant:cryptoImplementation}",
+}

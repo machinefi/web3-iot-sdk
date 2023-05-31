@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch PSA crypto tests",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${command:cmake.buildDirectory}/test/iotex-psa/api-tests/psa-arch-tests-crypto",
+            "MIMode": "gdb",
+            "cwd": "${workspaceFolder}",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "stopAtEntry": true,
+            "preLaunchTask": "Build"
+        },
+        {
+            "name": "Launch device registration example app (OS X)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${command:cmake.buildDirectory}/examples/device-registration/example-device-registration",
+            "MIMode": "lldb",
+            "cwd": "${command:cmake.buildDirectory}",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "args": [
+            ],
+            "stopAtEntry": false,
+            "preLaunchTask": "Build"
+        },
+    ]
+}

@@ -1,0 +1,41 @@
+buildType:
+  default: debug
+  description: Build Type (Debug, Release)
+  choices:
+    debug:
+      short: Debug
+      long: Build with debugging information
+      buildType: Debug
+    release:
+      short: Release
+      long: Optimize the resulting binaries
+      buildType: Release
+
+buildTests:
+  default: 'no'
+  choices:
+    'yes':
+      short: PSA tests
+      long: Build the PSA compliance test suite
+      settings:
+        BUILD_PSA_TEST_SUITE: ON
+    'no':
+      short: no PSA tests
+      long: Do not build the PSA compliance test suite
+      settings:
+        BUILD_PSA_TEST_SUITE: OFF
+
+# Select the crypto library implementation. The only one supported atm is MbedTLS
+cryptoImplementation:
+  default: 'MbedTLS'
+  choices:
+    'MbedTLS':
+      short: MbedTLS
+      long: Use MbedTLS as the underlying crypto implementation
+      settings:
+        CRYPTO_IMPL: MbedTLS
+    'TinyCrypt':
+      short: TinyCrypt
+      long: Use TinyCrypt as the underlying crypto implementation
+      settings:
+        CRYPTO_IMPL: TinyCrypt

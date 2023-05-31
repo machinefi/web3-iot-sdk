@@ -1,0 +1,12 @@
+[submodule "component/crypto/mbedtls"]
+	path = component/crypto/mbedtls
+	url = https://github.com/machinefi/iot-sdk-mbedtls
+[submodule "component/crypto/tinycrypt"]
+	path = component/crypto/tinycrypt
+	url = https://github.com/machinefi/iot-sdk-tinycrypt
+[submodule "services/iotex-tf"]
+	path = component/services/iotex-f
+	url = https://github.com/machinefi/iot-sdk-trusted-firmware
+[submodule "examples/w3bstream-client-rpi-mqtt/ext/nanopb"]
+	path = examples/w3bstream-client-rpi-mqtt/ext/nanopb
+	url = https://github.com/nanopb/nanopb.git

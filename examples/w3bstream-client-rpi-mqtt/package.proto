@@ -1,0 +1,46 @@
+syntax = "proto2";
+
+message Header {
+  required string event_type = 1; // event type
+  required string pub_id = 2;     // the unique identifier for publisher
+  required string token = 3;      // for validation message
+  required int64 pub_time = 4;    // event pub timestamp
+  required string event_id = 5;   // event id for tracing
+}
+
+message Event {
+  required Header header = 1;
+  required bytes payload = 2;
+}
+
+message SensorData
+{
+ required uint32 snr = 1;
+ required uint32 vbat = 2;
+ required sint32 latitude = 3;
+ required sint32 longitude = 4;
+ required uint32 gasResistance = 5;
+ required uint32 temperature = 6;
+ required uint32 pressure = 7;
+ required uint32 humidity = 8;
+ required uint32 light = 9;
+ required uint32 temperature2 = 10;
+ repeated  sint32 gyroscope = 11;
+ repeated  sint32 accelerometer = 12;
+ required string random = 13;
+}
+
+
+
+message BinaryPackage
+{
+    enum PackageType {
+        DATA = 0;
+        CONFIG = 1;
+        STATE = 2;
+    }
+    required PackageType type = 1;
+    required bytes data = 2;
+    required uint32 timestamp = 3;
+    required bytes signature = 4;
+}

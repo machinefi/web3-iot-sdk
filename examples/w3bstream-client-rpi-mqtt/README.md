@@ -54,7 +54,7 @@ apt-get install cmake build-essential
 
      ```bash
       rustup target add  wasm32-wasi
-      cd web3-iot-sdk/tools/wasm/raspi_test/
+      cd  examples/w3bstream-client-rpi-mqtt/tools/wasm/raspi_test/
       make
 
      ```

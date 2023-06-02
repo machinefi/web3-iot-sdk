@@ -23,7 +23,7 @@ _Web3IoTSDK_ is designed by keeping the following business objectives in mind:
 
 ![image](https://github.com/machinefi/web3-iot-sdk/blob/main/doc/img/Overview.png)
 
-The design of the Web3 IoT SDK follows a layered approach, comprising of five layers, from top to bottom: the DIDComm messaging layer, the identity and credential layer, the cryptographic service layer, the cryptographic primitive layer, and the root of trust layer. Each layer consists of multiple components in the _Web3IoTSDK_, enabling developers to customize the SDK flexibly to meet hardware constraints and application requirements.
+The design of _Web3IoTSDK_ follows a layered approach, comprising of five layers, from top to bottom: the DIDComm messaging layer, the identity and credential layer, the cryptographic service layer, the cryptographic primitive layer, and the root of trust layer. Each layer consists of multiple components in the _Web3IoTSDK_, enabling developers to customize the SDK flexibly to meet hardware constraints and application requirements.
 
 The five components in the cryptographic service layer and cryptographic primitive layer are shown below and each component may contain a number of sub-components.  
 

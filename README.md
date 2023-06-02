@@ -41,11 +41,11 @@ The five components in the cryptographic service layer and cryptographic primiti
 
 In practice, developers are able to customize _Web3IoTSDK_ to meet their requirements by selecting proper sub-components from one or multiple components above. Note that each sub-component in the above figure is marked with a color and sub-components with the same color could be used as a specific customization of _Web3IoTSDK_. Here we provide some customization examples below.
 
-  1. Iotex Firmware + MbedTLS + Hardware Acceleration: This combination is suitable for embedded platforms that do not support TrustZone&reg;, e.g., Raspberry Pi. In this mode, users can use the complete PSA APIs to implement cryptographic operations.  
+  1. IoTeX Default Firmware + MbedTLS + Hardware Acceleration: This combination is suitable for embedded platforms that do not support TrustZone&reg;, e.g., Raspberry Pi. In this mode, users can use the complete PSA APIs to implement cryptographic operations.  
 
   2. TF-M + MbedTLS + Hardware CryptoLib: This combination is suitable for Cortex-M  series MCUs with TrustZone&reg; support (e.g., Cortex-M23/M33/M55).  
 
-  3. Iotex Firmware + TinyCrypt: This combination is suitable for embedded platforms with highly constrained hardware resoruces (e.g., low-end Arduino boards). In this case, users need to customize _Web3IoTSDK_ for addressing specific hardware resource challenges.
+  3. IoTeX Default Firmware + TinyCrypt: This combination is suitable for embedded platforms with highly constrained hardware resoruces (e.g., low-end Arduino boards). In this case, users need to customize _Web3IoTSDK_ for addressing specific hardware resource challenges.
 
 In _Web3IoTSDK_, the componnets in the PSA abstraction layer (PSA_AL) are shown in the figure below.
 

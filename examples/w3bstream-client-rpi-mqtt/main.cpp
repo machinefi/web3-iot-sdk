@@ -361,10 +361,10 @@ int main(int argc, char *argv[]) {
 		{
 			w3bstream_topic = argv[++i];
 		}
-        if (arg == "-h")
+        if ((arg == "-h")||(arg == "--help"))
 		{
 			std::cout << "NAME" << std::endl;
-			std::cout << "	Web3 IoT SDK example: Raspberry Pi w3bstream client using HTTP." << std::endl;
+			std::cout << "	Web3 IoT SDK example: Raspberry Pi w3bstream client using MQTT." << std::endl;
 			std::cout << "SYNOPSIS" << std::endl;
 			std::cout << "	send_data [-n project_name] [-t w3bstream_token] [-w wallet_address] " << std::endl;
 			std::cout << "DESCRIPTION" << std::endl;

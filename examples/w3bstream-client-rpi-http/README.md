@@ -50,15 +50,15 @@ If everything went correctly, you should see a something along the lines of:
 [100%] Built target example-w3bstream-client-rpi-http
 ```
 
-The build output will be placed inside the `build-output` directory.  
+The build output will be placed inside the `build-out` directory.  
 
 ## Running this example
 
-Change directory to `build-output` and give execution permission to the executable:  
+Change directory to `build-out` and give execution permission to the executable:  
 
 ```bash
-cd build-output/examples/w3bstream-client-rpi-http
-chmod +x example_w3bstream-client-rpi-http
+cd build-out/examples/w3bstream-client-rpi-http
+chmod +x example-w3bstream-client-rpi-http
 ```
 
 Run the executable with the `-h` output to see a description on how to use it:  

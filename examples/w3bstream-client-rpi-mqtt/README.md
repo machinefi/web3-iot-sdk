@@ -127,7 +127,7 @@ If everything went correctly, you should see a something along the lines of:
 [100%] Built target w3bstream-client-rpi-mqtt
 ```
 
-The build output will be placed inside the `build-output` directory.
+The build output will be placed inside the `build-out` directory.
 
 ## Add public key to wasm
 
@@ -154,12 +154,12 @@ Copy public key(hex string) to the "raspi_pub_key" variable in the dev_test/src/
 
 ## Running this example
 
-Change directory to `build-output`:
+Change directory to `build-out`:
 
 ```bash
 cd web3-iot-sdk/build-out/examples/w3bstream-client-rpi-mqtt
 
-./w3bstream-client-rpi-mqtt  -t w3bstream_token  -T w3bstream_topic
+./example-w3bstream-client-rpi-mqtt  -t w3bstream_token  -T w3bstream_topic
 
 Connecting to the broker at devnet-staging.w3bstream.com ...
 Successfully connnected to the MQTT broker.

@@ -154,7 +154,6 @@ static char *build_message(psa_key_id_t key_id, unsigned int *len) {
     std::cout << std::endl;
 
 
-    std::cout << "binary_package.data.size :" << binary_package.data.size << std::endl;
     memcpy(binary_package.signature, signature, 64);
     binary_package.timestamp = uint_timestamp;
     binary_package.type = BinaryPackage_PackageType_DATA;
@@ -165,7 +164,6 @@ static char *build_message(psa_key_id_t key_id, unsigned int *len) {
         return 0;
     }
     w3bstream_event.payload.size = enc_packstream.bytes_written;
-    std::cout << "w3bstream_event.payload.size :" << w3bstream_event.payload.size << std::endl;
 
     pb_ostream_t stream = pb_ostream_from_buffer(data, data_buffer_size);
     if (!pb_encode(&stream, Event_fields, &w3bstream_event)) {
@@ -173,7 +171,6 @@ static char *build_message(psa_key_id_t key_id, unsigned int *len) {
         return 0;
     }
     *len = stream.bytes_written;
-    std::cout << "stream.bytes_written :" << stream.bytes_written << std::endl;
     return (char *)data;
 }
 
@@ -372,6 +369,8 @@ int main(int argc, char *argv[]) {
 			std::cout << "USAGE" << std::endl;
 			std::cout << "	Run the program specifying the required arguments." << std::endl;
 			std::cout << "	The program will periodically send a message to the w3bstream node and print the message and response to stdout." << std::endl << std::endl;
+            std::cout << "	Example:" << std::endl;
+            std::cout << "		./w3bstream-example -t \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXlsb2FkIjoiOTAyNTg1MTIzODM2OTI4MiIsImlzcyI6InczYnN0cmVhbSJ9.mNbURj_JJpn8nh9K_tvIuQv1hFD4QBBftkPasbx6x_0\" -T \"eth_0x0000835ae09314f5c5a0216ddb0968aa79100001_quick_start\"" << std::endl << std::endl;
 			std::cout << "OPTIONS" << std::endl;
 			std::cout << "	-t  w3bstream_token (required)" << std::endl;
 			std::cout << "		The publisher token. If not specified, an empty publisher token will be used." << std::endl << std::endl;
@@ -383,12 +382,12 @@ int main(int argc, char *argv[]) {
     }
 	if (w3bstream_token == "")
 	{
-		std::cerr << "Publisher token is required." << std::endl;
+		std::cerr << "Publisher token is required. Use the -h option for usage instructions" << std::endl;
 		return 1;
 	}
 	if (w3bstream_topic == "")
 	{
-		std::cerr << "Publisher topic is required." << std::endl;
+		std::cerr << "Publisher topic is required. Use the -h option for usage instructions" << std::endl;
 		return 1;
 	}
 
@@ -428,7 +427,8 @@ int main(int argc, char *argv[]) {
         message = build_message(key_id, &length);
         int res = mosquitto_publish(client, nullptr, w3bstream_topic.c_str(), length, message, 0, false);
         free(message);
-        if (res != MOSQ_ERR_SUCCESS) {
+        if (res != MOSQ_ERR_SUCCESS)
+        {
             std::cerr << "Failed to publish status query MQTT message" << std::endl;
             return ResultCode::ERR_MQTT;
         }

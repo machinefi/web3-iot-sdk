@@ -376,12 +376,12 @@ int main(int argc, char* argv[])
 	// Verify required arguments are present.
 	if (endpoint == "")
 	{
-		std::cerr << "Endpoint is required." << std::endl;
+		std::cerr << "Endpoint is required. Use the -h option for usage instructions." << std::endl;
 		return 1;
 	}
 	if (publisher_token == "")
 	{
-		std::cerr << "Publisher token is required." << std::endl;
+		std::cerr << "Publisher token is required. Use the -h option for usage instructions." << std::endl;
 		return 1;
 	}
 

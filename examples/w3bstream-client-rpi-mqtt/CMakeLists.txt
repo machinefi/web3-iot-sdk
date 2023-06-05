@@ -12,16 +12,16 @@ set(SOURCES
     ${PROTO_SRCS} ${PROTO_HDRS}
 )
 
-add_executable(w3bstream-client-rpi-mqtt ${SOURCES})
+add_executable(example-w3bstream-client-rpi-mqtt ${SOURCES})
 
-target_include_directories(w3bstream-client-rpi-mqtt
+target_include_directories(example-w3bstream-client-rpi-mqtt
     PRIVATE ${MOSQUITTO_INCLUDE_DIR}
     PRIVATE ${CMAKE_CURRENT_BINARY_DIR}
     PRIVATE ${NANOPB_INCLUDE_DIRS}
     PRIVATE ext
 )
 
-target_link_libraries(w3bstream-client-rpi-mqtt
+target_link_libraries(example-w3bstream-client-rpi-mqtt
     PRIVATE ${MOSQUITTO_LIBRARIES}
     PRIVATE ws_iot_sdk
 )

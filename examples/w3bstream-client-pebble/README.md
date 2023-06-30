@@ -24,7 +24,7 @@ protoc --version
 
  * Download the Pebble Tracker source code
 
-[Walk-to-earn Step-by-step Guide for Developers (larksuite.com)](https://iotex.larksuite.com/docs/docusyYoj4NNh481G3zvua3em1d#Ectsgi) 
+[Step by step Guide](./Step-by-step-Guide.md) 
 
  * Download w3bstream-client-pebble
       ```bash
